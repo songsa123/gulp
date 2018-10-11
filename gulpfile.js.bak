@@ -1,0 +1,40 @@
+// console.log("hello")
+// const gulp=require("gulp");
+// gulp.task("hello",()=>{
+//     console.log("我的代码在命令行里面被执行了");
+// })
+//配置  由开发环境转存到发布环境
+const gulp=require("gulp");
+gulp.task("html",()=>{
+    return gulp.src("index.html").pipe(gulp.dest("dist/"));
+})
+
+gulp.task("script",()=>{
+// return gulp.src(["script/libs/*.js","script/app/*.js","script/module/*.js"]).pipe(gulp.dest("dist/script"));
+
+   return gulp.src(["srcipt/*/*.js"]).pipe(gulp.dest("dist/script"));
+})
+
+//默认指令  gulp+指令
+// gulp.task("default",["html","script"]);
+//检测
+gulp.task("watch",()=>{
+    gulp.watch("index.html",["html"])
+})
+
+
+// const gulp=require("gulp");
+//没用下面的
+// const connect=require("gulp-connect");
+// gulp.task('connect',function(){
+//     connect.server({
+//         port:8888
+        
+//     });
+// })
+
+
+
+
+
+
